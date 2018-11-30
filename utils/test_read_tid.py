@@ -8,8 +8,8 @@
 
 import numpy as np
 
-f_fileid = np.load('fileidlist.npy')
-f_tid = np.load('tidlist.npy')
+f_fileid = np.load('../data/fileidlist.npy')
+f_tid = np.load('../data/tidlist.npy')
 
 for i in xrange(0, f_fileid.size):
     print(f_fileid[i], f_tid[i])
