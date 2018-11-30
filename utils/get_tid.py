@@ -30,9 +30,9 @@ def write_list_to_file(file, l):
 '''
 # filenames = ['../split_1.csv', '../split_2.csv', '../split_3.csv', '../split_4.csv',
 #              '../split_5.csv', '../split_6.csv', '../split_7.csv', '../split_8.csv', '../split_9.csv']
-base_name = '../split_'
+base_name = '../data/split_'
 suffix_name = '.csv'
-for file_id in xrange(1, 10):
+for file_id in xrange(8, 9):
     filename = base_name + str(file_id) + suffix_name  # a better expression
     with open(filename) as f:
         print('\n\n handing %s' % filename)
@@ -69,6 +69,7 @@ for file_id in xrange(1, 10):
 
         except:
             print('Error')
+            exit(0)
         # save the last tid
         tid_list_save.append(len(fileid_tid_dict[pre_fileid]))
 
