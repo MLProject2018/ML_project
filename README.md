@@ -2,7 +2,7 @@
 ## TODO
 - [x] split dataset to 9 subdataset
 - [x] get API dict
-- [x] get metric
+- [ ] get metric
 - [x] get number of thread
 
 ## Method 
