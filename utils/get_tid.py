@@ -32,7 +32,7 @@ def write_list_to_file(file, l):
 #              '../split_5.csv', '../split_6.csv', '../split_7.csv', '../split_8.csv', '../split_9.csv']
 base_name = '../data/split_'
 suffix_name = '.csv'
-for file_id in xrange(8, 9):
+for file_id in xrange(0, 10):
     filename = base_name + str(file_id) + suffix_name  # a better expression
     with open(filename) as f:
         print('\n\n handing %s' % filename)
