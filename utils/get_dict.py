@@ -6,12 +6,12 @@ filenames = ['../split_1.csv', '../split_2.csv', '../split_3.csv', '../split_4.c
 
 for filename in filenames:
     print(filename)
-    with open(filename) as f:
+    with open(filename, errors='ignore') as f: # !! ADD:errors='ignore'
         reader = csv.reader(f)
         try:
             for row in reader:
-                api = row[2]
-                if api not in api_list:
+                api = row[2] # position of api 
+                if api not in api_list: # new api
                     api_list.append(api)
         except:
             print('Error')
