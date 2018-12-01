@@ -4,7 +4,7 @@
 - [x] get API dict
 - [ ] get metric
 - [x] get number of thread
-- [ ] get label 
+- [x] get label 
 
 ## Method 
 - Neural Network
