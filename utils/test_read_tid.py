@@ -10,6 +10,7 @@ import numpy as np
 
 f_fileid = np.load('../data/fileidlist.npy')
 f_tid = np.load('../data/tidlist.npy')
+f_label = np.load('../data/label.npy')
 
 for i in xrange(0, f_fileid.size):
-    print(f_fileid[i], f_tid[i])
+    print(f_fileid[i], f_tid[i], f_label[i])
