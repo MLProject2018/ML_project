@@ -32,21 +32,21 @@ def write_list_to_file(file, l):
 #              '../split_5.csv', '../split_6.csv', '../split_7.csv', '../split_8.csv', '../split_9.csv']
 base_name = '../data/split_'
 suffix_name = '.csv'
-for file_id in xrange(1, 10):
-    filename = base_name + str(file_id) + suffix_name  # a better expression
+fileid_tid_dict = {}  # result stored in this dict
+fileid_list_save = []
+tid_list_save = []
+pre_fileid = 0
+f_tid = file('../data/tidlist.npy', 'wb')
+f_fileid = file('../data/fileidlist.npy', 'wb')
+tid_list = []
+for file_num in xrange(1, 10):
+    filename = base_name + str(file_num) + suffix_name  # a better expression
     with open(filename) as f:
         print('\n\n handing %s' % filename)
-        fileid_tid_dict = {}
-        fileid_list_save = []
-        tid_list_save = []
-        pre_fileid = 0
-        f_tid = file('../data/tidlist.npy', 'wb')
-        f_fileid = file('../data/fileidlist.npy', 'wb')
         reader = csv.reader(f)
         try:
-            tid_list = []
             for row in reader:
-                # get file_id and tid
+                # get fileid and tid
                 fileid = int(row[0])
                 tid = int(row[3])
 
@@ -70,13 +70,14 @@ for file_id in xrange(1, 10):
         except:
             print('Error')
             exit(0)
-        # save the last tid
-        tid_list_save.append(len(fileid_tid_dict[pre_fileid]))
 
-        # save tid information to npy file
-        np.save(f_fileid, fileid_list_save)
-        np.save(f_tid, tid_list_save)
-        # print(pre_fileid, fileid_tid_dict[pre_fileid])
-        print('total line: %d' % len(fileid_tid_dict.keys()))
-        f_tid.close()
-        f_fileid.close()
+# save the last tid
+tid_list_save.append(len(fileid_tid_dict[pre_fileid]))
+
+# save tid information to npy file
+np.save(f_fileid, fileid_list_save)
+np.save(f_tid, tid_list_save)
+# print(pre_fileid, fileid_tid_dict[pre_fileid])
+print('total line: %d' % len(fileid_tid_dict.keys()))
+f_tid.close()
+f_fileid.close()
