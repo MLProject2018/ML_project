@@ -1,16 +1,16 @@
 # 机器学习Project调参记录
 
-###nodecay
+### nodecay
 
 - 使用lr为1e-3， 在100个epoch达到最优，之后loss上升
 - acc 0.8, loss 0.65 
 
-###decay
+### decay
 
 - 初始lr为1e-3，每10个epoch 学习率 decay 0.9， 110个epoch达到最优，之后loss上升
 - acc 0.822, loss 0.584
 
-###decay_nothread
+### decay_nothread
 
 - 不考虑线程数，<u>效果下降</u>
 - acc 0.79 loss 0.65
